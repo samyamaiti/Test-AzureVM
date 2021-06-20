@@ -1,6 +1,6 @@
 variable "rg_name" {
-    deafult = "sam-test"
+    default = "sam-test"
 }
 variable "location" {
-    deafult = "East Asia"
+    default = "East Asia"
 }
