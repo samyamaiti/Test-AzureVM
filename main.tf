@@ -18,7 +18,6 @@ resource "azurerm_linux_virtual_machine" "example" {
   location            = var.location
   size                = "Standard_F2"
   admin_username      = "adminuser"
-  network_interface_ids = "example-nic"
 
   # admin_ssh_key {
   #   username   = "adminuser"
