@@ -10,19 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y
   displayName: 'Run a one-line script'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: InstallSSHKey@0
-  inputs:
-      knownHostsEntry: 
-      sshPublicKey: 
-      #sshPassphrase: # Optional
-      sshKeySecureFile:
 - task: SSH@0
   inputs:
     runOptions: 'inline'
