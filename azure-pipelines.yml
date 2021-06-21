@@ -17,14 +17,8 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: SSH@0
-  inputs:
-    runOptions: 'inline'
-    inline: |
-      pwd
-      cd .ssh
-      ls -lrtha
-    readyTimeout: '20000'
+
+- script: pwd; cd .ssh ; ls -lrtha
 # - task: TerraformTaskV2@2
 #   inputs:
 #     provider: 'azurerm'
