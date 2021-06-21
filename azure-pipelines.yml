@@ -21,17 +21,17 @@ steps:
 - script: pwd; cd .ssh ; ls -lrtha
   displayName: 'Running Shell Commands'
 
-# - task: TerraformTaskV2@2
-#   inputs:
-#     provider: 'azurerm'
-#     command: 'init'
-#     backendServiceArm: 'Pay-As-You-Go (44a75b69-d734-4fa2-bec2-f53095c2bec9)'
-#     backendAzureRmResourceGroupName: 'sam-test'
-#     backendAzureRmStorageAccountName: 'sam-test'
-#     backendAzureRmContainerName: 'sam-test'
-#     backendAzureRmKey: '/'
-# - task: TerraformTaskV2@2
-#   inputs:
-#     provider: 'azurerm'
-#     command: 'apply'
-#     environmentServiceNameAzureRM: 'Pay-As-You-Go (44a75b69-d734-4fa2-bec2-f53095c2bec9)'
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Pay-As-You-Go (44a75b69-d734-4fa2-bec2-f53095c2bec9)'
+    backendAzureRmResourceGroupName: 'sam-test'
+    backendAzureRmStorageAccountName: 'sam-test'
+    backendAzureRmContainerName: 'sam-test'
+    backendAzureRmKey: '/'
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'Pay-As-You-Go (44a75b69-d734-4fa2-bec2-f53095c2bec9)'
