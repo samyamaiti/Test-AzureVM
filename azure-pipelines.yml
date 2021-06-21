@@ -19,6 +19,10 @@ steps:
   displayName: 'Run a multi-line script'
 - task: InstallSSHKey@0
   inputs:
+      knownHostsEntry: 
+      sshPublicKey: 
+      #sshPassphrase: # Optional
+      sshKeySecureFile:
 - task: SSH@0
   inputs:
     runOptions: 'inline'
