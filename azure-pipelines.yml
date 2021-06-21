@@ -11,7 +11,7 @@ pool:
 
 steps:
 - script: ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y
-  displayName: 'Run a one-line script'
+  displayName: 'Creating ssh keys'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
@@ -19,6 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 
 - script: pwd; cd .ssh ; ls -lrtha
+  displayName: 'Running Shell Commands'
+
 # - task: TerraformTaskV2@2
 #   inputs:
 #     provider: 'azurerm'
