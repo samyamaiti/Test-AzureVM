@@ -19,12 +19,14 @@ steps:
   displayName: 'Run a multi-line script'
 - task: InstallSSHKey@0
   inputs:
-- script: |
-    pwd
-    cd .ssh
-    ls -lrth
-    pwd
-  displayName: 'Run a multi-line script'
+- task: SSH@0
+  inputs:
+    runOptions: 'inline'
+    inline: |
+      pwd
+      cd .ssh
+      ls -lrtha
+    readyTimeout: '20000'
 # - task: TerraformTaskV2@2
 #   inputs:
 #     provider: 'azurerm'
