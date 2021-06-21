@@ -47,17 +47,11 @@ resource "azurerm_linux_virtual_machine" "example" {
     azurerm_network_interface.example.id,
   ]
 
-  # admin_ssh_key {
-  #    username   = "adminuser"
-  #    public_key = file("~/.ssh/id_rsa.pub")
-  #  }
-
-  os_profile {
-    computer_name  = "hostname"
-    admin_username = "adminuser"
-    admin_password = "Password1234!"
-  }
-
+  admin_ssh_key {
+     username   = "adminuser"
+     public_key = file("~/home/vsts/.ssh/id_rsa.pub")
+   }
+   
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
